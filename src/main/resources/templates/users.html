@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>users</title>
+</head>
+<body>
+<p>Пользователи:</p>
+<ul>
+    <li th:each="user : ${users}">
+        <a th:href="@{'/users/' + ${user.getName()}}">
+            <span th:text="${user.getName()}"></span>
+        </a>
+    </li>
+</ul>
+
+<form method="get" action="/users/new">
+    <button>Добавить участника</button>
+</form>
+</body>
+</html>

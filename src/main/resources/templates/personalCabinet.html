@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Кабинет</title>
+</head>
+<body>
+<p th:text="'Имя: ' + ${name}"/>
+<p th:text="'Тип личности: ' + ${type}"/>
+<p>Отношения:</p>
+<p>Плохие:</p>
+<ul>
+    <li th:each="relationship : ${bad}" th:text="${relationship}"></li>
+</ul>
+
+<p>Нормальные:</p>
+<ul>
+    <li th:each="relationship : ${normal}" th:text="${relationship}"></li>
+</ul>
+
+<p>Неплохие:</p>
+<ul>
+    <li th:each="relationship : ${ok}" th:text="${relationship}"></li>
+</ul>
+
+<p>Хорошие:</p>
+<ul>
+    <li th:each="relationship : ${good}" th:text="${relationship}"></li>
+</ul>
+
+<p>Лучшие:</p>
+<ul>
+    <li th:each="relationship : ${best}" th:text="${relationship}"></li>
+</ul>
+
+<form method="post" th:action="@{/users/delete/{name}(name=${name})}">
+    <p>Выберите группу:</p>
+    <input type="number" name="groupId"/>
+    <button type="submit">Удалить</button>
+</form>
+</body>
+</html>

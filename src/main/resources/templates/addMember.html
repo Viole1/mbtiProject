@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menu</title>
+</head>
+<body>
+    <form action="/users" method="post">
+        <p>Введите своё имя:</p>
+        <input type="text" name="name"/>
+
+        <p>Выберите группу:</p>
+        <input type="number" name="groupId"/>
+        <p>Выберите свой тип:</p>
+        <select name="type">
+            <option>infp</option>
+            <option>estj</option>
+            <option>estp</option>
+            <option>istp</option>
+            <option>entp</option>
+        </select>
+        <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>
